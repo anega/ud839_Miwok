@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,8 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        rootView = (LinearLayout) findViewById(R.id.root_view);
 
         ArrayList<String> words = new ArrayList<String>();
         words.add("one");
@@ -28,9 +31,11 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("ten");
 
         int i = 0;
-        for (String word:
-             words) {
-            Log.v("Jopka", "Word at index " + (i++) + ": " + word);
+        while (i < words.size()) {
+            TextView word = new TextView(this);
+            word.setText(words.get(i));
+            rootView.addView(word);
+            i++;
         }
     }
 }
