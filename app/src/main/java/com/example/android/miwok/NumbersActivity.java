@@ -30,12 +30,10 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("nine");
         words.add("ten");
 
-        int i = 0;
-        while (i < words.size()) {
+        for (int i = 0; i < words.size(); i++) {
             TextView word = new TextView(this);
             word.setText(words.get(i));
             rootView.addView(word);
-            i++;
         }
     }
 }
