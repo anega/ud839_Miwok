@@ -7,13 +7,13 @@
     android:padding="@dimen/padding_activity_word_item">
 
     <TextView
-        android:id="@+id/tv_numbers_miwok_word"
+        android:id="@+id/tv_miwok_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="lutti" />
 
     <TextView
-        android:id="@+id/tv_numbers_default_word"
+        android:id="@+id/tv_default_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="one" />
