@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -32,7 +33,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        Word currWord = getItem(position);
+        final Word currWord = getItem(position);
 
         TextView miwokTranslation = (TextView) listItemView.findViewById(R.id.tv_miwok_word);
         miwokTranslation.setText(currWord.getMiwokTranslation());
@@ -48,6 +49,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             wordImage.setVisibility(View.GONE);
         }
 
+        // Specifically set list item backgroundColor(depends on category)
         View wordsLayout = listItemView.findViewById(R.id.ll_layout_text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
         wordsLayout.setBackgroundColor(color);
