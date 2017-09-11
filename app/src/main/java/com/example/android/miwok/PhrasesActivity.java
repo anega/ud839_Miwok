@@ -49,8 +49,16 @@ public class PhrasesActivity extends AppCompatActivity {
                 releaseMediaPlayer();
                 mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceId());
                 mMediaPlayer.start();
+
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 
     /**
